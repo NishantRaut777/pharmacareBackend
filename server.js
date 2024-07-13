@@ -9,6 +9,7 @@ dotenv.config();
 connectDB();
 
 const app = express();
+const port = process.env.PORT || 4200;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,6 +21,6 @@ app.use("/api/product", require("./routes/productRoutes"));
 app.use("/api/cart", require("./routes/cartRoutes"));
 app.use("/api/order", require("./routes/orderRoutes"));
 
-app.listen(process.env.PORT, () => {
-    console.log("SERVER IS RUNNING ON PORT 3200");
+app.listen(port, () => {
+    console.log(`SERVER IS RUNNING ON PORT ${port}`);
 });
