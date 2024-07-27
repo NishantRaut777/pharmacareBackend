@@ -11,6 +11,9 @@ connectDB();
 const app = express();
 const port = process.env.PORT || 4200;
 
+// Trust the proxy
+app.set('trust proxy', true);
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
